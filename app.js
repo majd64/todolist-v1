@@ -9,12 +9,12 @@ app.use(bodyParser.urlencoded({
 }))
 app.use(express.static("public"));
 
-let items = [];
-let workItems = [];
+const items = [];
+const workItems = [];
 
 app.get("/", function(req, res) {
   res.render("list", {
-    listTitle: date(),
+    listTitle: date.getDate,
     newListItems: items
   });
 });
